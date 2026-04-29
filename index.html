@@ -137,28 +137,53 @@
   .footer-cta h2 { font-size: 20px; font-weight: 700; line-height: 1.7; margin-bottom: 20px; }
   .footer-cta p { font-size: 13px; color: #d4d4d8; line-height: 1.8; margin-bottom: 12px; }
   .footer-cta .org { font-size: 12px; color: #71717a; margin-bottom: 24px; }
+
+  /* Scroll Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-28px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.88);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+  [data-delay="1"] { transition-delay: 0.08s; }
+  [data-delay="2"] { transition-delay: 0.16s; }
+  [data-delay="3"] { transition-delay: 0.24s; }
+  [data-delay="4"] { transition-delay: 0.32s; }
+  [data-delay="5"] { transition-delay: 0.40s; }
 </style>
 </head>
 <body>
 
 <!-- Hero -->
 <section class="hero">
-  <p class="eyebrow">GROW在宅医療アカデミー主催</p>
-  <div class="hero-title-block">
+  <p class="eyebrow reveal">GROW在宅医療アカデミー主催</p>
+  <div class="hero-title-block reveal" data-delay="1">
     <div class="hero-title-jp">訪問鍼灸<span class="hero-title-num">2.0</span></div>
     <div class="hero-tagline">集客実践セミナー</div>
   </div>
-  <p class="body">現場主義の先生方が、正しく伸びる業界へ。<br>知っている人だけが、静かに伸びていく。<br>その"仕組み"を、3ヶ月で。</p>
-  <div style="margin-bottom:16px"><span class="badge">LIMITED SESSION</span></div>
-  <button class="btn-primary">お申込みはこちら</button>
+  <p class="body reveal" data-delay="2">現場主義の先生方が、正しく伸びる業界へ。<br>知っている人だけが、静かに伸びていく。<br>その"仕組み"を、3ヶ月で。</p>
+  <div style="margin-bottom:16px" class="reveal" data-delay="3"><span class="badge">LIMITED SESSION</span></div>
+  <button class="btn-primary reveal" data-delay="4">お申込みはこちら</button>
 </section>
 
 <!-- Impact -->
 <div class="impact-wrap">
   <div class="impact">
-    <p class="label">NEW STANDARD</p>
-    <h2>現場主義でも<span class="accent">勝てる</span></h2>
-    <div class="impact-row">
+    <p class="label reveal">NEW STANDARD</p>
+    <h2 class="reveal" data-delay="1">現場主義でも<span class="accent">勝てる</span></h2>
+    <div class="impact-row reveal" data-delay="2">
       <div class="big-num">3</div>
       <div class="impact-text">
         <p class="sys">SYSTEM BUILD</p>
@@ -166,7 +191,7 @@
         <p>なぜ、紹介が途切れないのか。<br>その答えは、当日お伝えします。</p>
       </div>
     </div>
-    <div class="quote-block">
+    <div class="quote-block reveal" data-delay="3">
       <p>良い施術だけでは広がらない。<br><strong>選ばれる事業所</strong>には、理由がある。</p>
     </div>
   </div>
@@ -175,58 +200,61 @@
 <!-- Message -->
 <div class="message-wrap">
   <div class="message">
-    <h2>GROWの<em>想い</em></h2>
-    <p>私たちGROWは、現場で本気で利用者様と向き合う先生方が、正しく評価され、正しく伸びる業界をつくりたいと考えています。</p>
-    <p>営業が強いところだけが伸びるこの業界を変えたい。その想いで、これまで数多くの失敗も成功も重ねてきました。</p>
-    <blockquote>「縁を力に、学びを実力に。<br>現場の価値を、未来へ。」</blockquote>
+    <h2 class="reveal">GROWの<em>想い</em></h2>
+    <p class="reveal" data-delay="1">私たちGROWは、現場で本気で利用者様と向き合う先生方が、正しく評価され、正しく伸びる業界をつくりたいと考えています。</p>
+    <p class="reveal" data-delay="2">営業が強いところだけが伸びるこの業界を変えたい。その想いで、これまで数多くの失敗も成功も重ねてきました。</p>
+    <p class="reveal" data-delay="3">「縁を力に、学びを実力に。現場の価値を、未来へ。」</p>
   </div>
 </div>
 
 <!-- Recommended -->
 <div class="recommended-wrap">
   <div class="recommended">
-    <h2>こんな方におすすめ</h2>
-    <p class="sub-label">CHECK LIST</p>
-    <div class="check-item">訪問鍼灸マッサージの集客に悩んでいる方</div>
-    <div class="check-item">これから開業を考えておられる方</div>
-    <div class="check-item">ケアマネ営業しかしていない方</div>
-    <div class="check-item">月の集客が5人以下で伸び悩んでいる方</div>
-    <div class="check-item">地域で本当に必要とされる事業所を作りたい方</div>
+    <h2 class="reveal">こんな方におすすめ</h2>
+    <p class="sub-label reveal" data-delay="1">CHECK LIST</p>
+    <div class="check-item reveal" data-delay="1">訪問鍼灸マッサージの集客に悩んでいる方</div>
+    <div class="check-item reveal" data-delay="2">これから開業を考えておられる方</div>
+    <div class="check-item reveal" data-delay="3">ケアマネ営業しかしていない方</div>
+    <div class="check-item reveal" data-delay="4">月の集客が5人以下で伸び悩んでいる方</div>
+    <div class="check-item reveal" data-delay="5">地域で本当に必要とされる事業所を作りたい方</div>
   </div>
 </div>
 
 <!-- Learn -->
 <div class="learn-wrap">
   <div class="learn">
-    <h2>セミナーで学べること</h2>
-    <p>なぜ、あの事業所だけが選ばれ続けるのか</p>
-    <p>紹介が自然に生まれる、見えない導線</p>
-    <p>表には出ない、伸び続ける事業所の裏側</p>
+    <h2 class="reveal">セミナーで学べること</h2>
+    <p class="reveal" data-delay="1">なぜ、あの事業所だけが選ばれ続けるのか</p>
+    <p class="reveal" data-delay="2">紹介が自然に生まれる、見えない導線</p>
+    <p class="reveal" data-delay="3">表には出ない、伸び続ける事業所の裏側</p>
   </div>
 </div>
 
 <!-- Statement -->
 <div class="statement-wrap">
   <div class="statement">
-    <p class="eyebrow">ONLY FOR REAL PRACTITIONERS</p>
-    <h2>営業が強い<span>だけじゃない</span></h2>
-    <p class="body">地域に残るのは、<br>本当に必要とされる事業所だけ。</p>
+    <p class="eyebrow reveal">ONLY FOR REAL PRACTITIONERS</p>
+    <h2 class="reveal-scale" data-delay="1">営業が強い<span>だけじゃない</span></h2>
+    <p class="body reveal" data-delay="2">地域に残るのは、<br>本当に必要とされる事業所だけ。</p>
   </div>
 </div>
 
 <!-- Event Info -->
 <div class="event-wrap">
   <div class="event">
-    <h2>開催概要</h2>
-    <p class="sub-label">SEMINAR INFO</p>
-    <div class="event-row">📅 7月・8月・9月 第三日曜</div>
-    <div class="event-row">⏰ 13:00〜16:00</div>
-    <div class="event-row">👥 定員 30名</div>
-    <div class="event-row">📍 大阪市中央区南船場1丁目12-11</div>
-    <div class="fee-card">
+    <h2 class="reveal">開催概要</h2>
+    <p class="sub-label reveal" data-delay="1">SEMINAR INFO</p>
+    <div class="event-row reveal" data-delay="1">📅 7月・8月・9月 第3日曜</div>
+    <div class="event-row reveal" data-delay="2">⏰ 13:00〜16:00</div>
+    <div class="event-row reveal" data-delay="3">🥂 懇親会 16:30〜19:00（別途懇親会費必要）</div>
+    <div class="event-row reveal" data-delay="4">👥 定員 30名</div>
+    <div class="event-row reveal" data-delay="5">📍 〒542-0081 大阪府大阪市中央区南船場1丁目12-11<br>　　クレディセゾン関西オフィス</div>
+    <div class="event-row reveal">🤝 協賛：クレディセゾン 他1社予定</div>
+    <div class="fee-card reveal-scale">
       <p class="title">参加費</p>
       <p>60,000円（税別）／全3回</p>
-      <p>GROWメンバー：参加費無料（懇親会費別途）</p>
+      <p style="margin-top:8px;font-weight:700;">🎁 GROWメンバー：参加費無料</p>
+      <p style="font-size:12px;">（※懇親会費は別途必要）</p>
     </div>
   </div>
 </div>
@@ -234,12 +262,26 @@
 <!-- Footer CTA -->
 <section class="footer-cta">
   <div class="footer-inner">
-    <h2>良い施術だけでは広がらない。<br>選ばれる事業所には、仕組みがある。</h2>
-    <p>まだ知られていない価値を、正しく届く仕組みに変える。</p>
-    <p class="org">主催：GROW在宅医療アカデミー</p>
-    <button class="btn-primary">お申込み・お問い合わせ</button>
+    <h2 class="reveal">良い施術だけでは広がらない。<br>選ばれる事業所には、仕組みがある。</h2>
+    <p class="reveal" data-delay="1">まだ知られていない価値を、正しく届く仕組みに変える。</p>
+    <p class="org reveal" data-delay="2">主催：GROW在宅医療アカデミー</p>
+    <button class="btn-primary reveal" data-delay="3">お申込み・お問い合わせ</button>
   </div>
 </section>
 
 </body>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </html>
