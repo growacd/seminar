@@ -38,6 +38,21 @@
     line-height: 1;
     filter: drop-shadow(0 0 50px rgba(245,196,0,0.45));
     margin-top: -8px;
+    animation: flicker 4s infinite;
+  }
+
+  @keyframes flicker {
+    0%   { opacity: 1;    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45)); }
+    2%   { opacity: 0.3;  filter: drop-shadow(0 0 8px  rgba(245,196,0,0.1)); }
+    4%   { opacity: 1;    filter: drop-shadow(0 0 60px rgba(245,196,0,0.7)); }
+    6%   { opacity: 0.5;  filter: drop-shadow(0 0 20px rgba(245,196,0,0.2)); }
+    8%   { opacity: 1;    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45)); }
+    50%  { opacity: 1;    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45)); }
+    52%  { opacity: 0.2;  filter: drop-shadow(0 0 4px  rgba(245,196,0,0.05)); }
+    54%  { opacity: 1;    filter: drop-shadow(0 0 70px rgba(245,196,0,0.8)); }
+    56%  { opacity: 0.8;  filter: drop-shadow(0 0 40px rgba(245,196,0,0.4)); }
+    58%  { opacity: 1;    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45)); }
+    100% { opacity: 1;    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45)); }
   }
   .hero-tagline {
     display: inline-block;
@@ -248,7 +263,10 @@
     <div class="event-row reveal" data-delay="2">⏰ 13:00〜16:00</div>
     <div class="event-row reveal" data-delay="3">🥂 懇親会 16:30〜19:00（別途懇親会費必要）</div>
     <div class="event-row reveal" data-delay="4">👥 定員 30名</div>
-    <div class="event-row reveal" data-delay="5">📍 〒542-0081 大阪府大阪市中央区南船場1丁目12-11<br>　　クレディセゾン関西オフィス</div>
+    <div class="event-row reveal" data-delay="5" style="align-items:flex-start;">
+      <span style="flex-shrink:0;">📍</span>
+      <span>〒542-0081 大阪府大阪市中央区南船場1丁目12-11 クレディセゾン関西オフィス</span>
+    </div>
     <div class="event-row reveal">🤝 協賛：クレディセゾン 他1社予定</div>
     <div class="fee-card reveal-scale">
       <p class="title">参加費</p>
