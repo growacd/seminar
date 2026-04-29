@@ -1,0 +1,251 @@
+
+bash
+
+cat > /mnt/user-data/outputs/grow_lp.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訪問鍼灸2.0 集客実践セミナー | GROW在宅医療アカデミー</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
+
+  :root { --yellow: #F5C400; }
+
+  /* Hero */
+  .hero {
+    background: radial-gradient(circle at top, rgba(245,196,0,0.10), transparent 45%),
+                linear-gradient(to bottom, #000, #18181b, #000);
+    padding: 72px 24px 80px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: #71717a; margin-bottom: 20px;
+  }
+  .hero-title-block { margin-bottom: 20px; }
+  .hero-title-jp {
+    font-size: clamp(64px, 17vw, 88px);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.03em;
+    filter: drop-shadow(0 0 40px rgba(245,196,0,0.25));
+  }
+  .hero-title-num {
+    display: block;
+    font-size: clamp(80px, 22vw, 110px);
+    font-style: italic;
+    color: var(--yellow);
+    transform: rotate(-2deg);
+    line-height: 1;
+    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45));
+    margin-top: -8px;
+  }
+  .hero-tagline {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    border-top: 2px solid var(--yellow);
+    border-bottom: 2px solid var(--yellow);
+    padding: 8px 20px;
+  }
+  .hero p.body { font-size: 13px; color: #e4e4e7; line-height: 1.9; margin: 24px 0 20px; }
+  .badge {
+    display: inline-block;
+    border: 1.5px solid var(--yellow);
+    padding: 6px 18px;
+    font-size: 11px; letter-spacing: 0.28em; font-weight: 700;
+    color: var(--yellow);
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+  }
+  .btn-primary {
+    display: block; width: 100%; max-width: 360px; margin: 0 auto;
+    padding: 20px; font-size: 15px; font-weight: 700;
+    background: var(--yellow); color: #000;
+    border: none; border-radius: 16px; cursor: pointer;
+    box-shadow: 0 0 40px rgba(245,196,0,0.45);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  /* Impact */
+  .impact-wrap {
+    background: linear-gradient(to bottom, #09090b, #000);
+    border-top: 1px solid rgba(245,196,0,0.25);
+    border-bottom: 1px solid rgba(245,196,0,0.25);
+    padding: 56px 24px;
+  }
+  .impact { max-width: 480px; margin: 0 auto; }
+  .label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #52525b; margin-bottom: 6px; }
+  .impact h2 { font-size: 36px; font-weight: 900; line-height: 1; }
+  .impact h2 .accent { display: block; font-style: italic; font-size: 46px; color: var(--yellow); transform: rotate(-2deg); }
+  .impact-row { display: flex; align-items: flex-start; gap: 16px; margin-top: 40px; }
+  .big-num { font-size: 100px; font-weight: 900; line-height: 1; color: var(--yellow); }
+  .impact-text .sys { font-size: 10px; letter-spacing: 0.3em; color: #52525b; text-transform: uppercase; margin-bottom: 8px; }
+  .impact-text h3 { font-size: 22px; font-weight: 900; line-height: 1.2; }
+  .impact-text h3 span { display: block; font-size: 26px; color: var(--yellow); }
+  .impact-text p { font-size: 12px; color: #a1a1aa; line-height: 1.7; margin-top: 8px; }
+  .quote-block { border-left: 4px solid var(--yellow); padding: 16px; background: rgba(39,39,42,0.4); border-radius: 0 12px 12px 0; margin-top: 32px; }
+  .quote-block p { font-size: 13px; color: #d4d4d8; line-height: 1.8; }
+  .quote-block strong { font-size: 18px; color: #fff; }
+
+  /* Message */
+  .message-wrap { padding: 48px 24px; }
+  .message { max-width: 480px; margin: 0 auto; }
+  .message h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+  .message h2 em { color: #a1a1aa; font-style: normal; }
+  .message p { font-size: 13px; color: #d4d4d8; line-height: 1.9; margin-bottom: 16px; }
+  .message blockquote { font-size: 18px; font-weight: 600; font-style: italic; line-height: 1.7; border-left: 4px solid #fff; padding-left: 16px; }
+
+  /* Recommended */
+  .recommended-wrap { background: linear-gradient(to bottom, #09090b, #000); border-top: 1px solid rgba(245,196,0,0.1); padding: 48px 24px; }
+  .recommended { max-width: 480px; margin: 0 auto; }
+  .recommended h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .sub-label { font-size: 12px; color: var(--yellow); font-style: italic; margin-bottom: 20px; }
+  .check-item { border: 1px solid rgba(245,196,0,0.2); background: rgba(39,39,42,0.8); border-radius: 16px; padding: 14px 16px; font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
+
+  /* Learn */
+  .learn-wrap { padding: 48px 24px; }
+  .learn { max-width: 480px; margin: 0 auto; }
+  .learn h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+  .learn p { font-size: 13px; color: #d4d4d8; line-height: 1.8; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #27272a; }
+  .learn p:last-child { border-bottom: none; }
+
+  /* Statement */
+  .statement-wrap { padding: 64px 24px; text-align: center; }
+  .statement { max-width: 480px; margin: 0 auto; }
+  .statement .eyebrow { font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #52525b; margin-bottom: 24px; }
+  .statement h2 { font-size: 44px; font-weight: 900; line-height: 1.2; }
+  .statement h2 span { display: block; font-style: italic; color: var(--yellow); transform: skewX(-6deg); }
+  .statement .body { font-size: 16px; font-weight: 600; line-height: 1.8; margin-top: 24px; }
+
+  /* Event Info */
+  .event-wrap { background: linear-gradient(to bottom, #09090b, #000); border-top: 1px solid rgba(245,196,0,0.1); padding: 48px 24px; }
+  .event { max-width: 480px; margin: 0 auto; }
+  .event h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .event-row { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; margin-bottom: 14px; color: #d4d4d8; }
+  .fee-card { background: var(--yellow); color: #000; border-radius: 20px; padding: 24px; margin-top: 20px; }
+  .fee-card p { font-size: 13px; line-height: 1.8; }
+  .fee-card p.title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+
+  /* Footer CTA */
+  .footer-cta { padding: 80px 24px; text-align: center; background: linear-gradient(to bottom, #000, #111); border-top: 1px solid rgba(245,196,0,0.2); }
+  .footer-inner { max-width: 480px; margin: 0 auto; }
+  .footer-cta h2 { font-size: 20px; font-weight: 700; line-height: 1.7; margin-bottom: 20px; }
+  .footer-cta p { font-size: 13px; color: #d4d4d8; line-height: 1.8; margin-bottom: 12px; }
+  .footer-cta .org { font-size: 12px; color: #71717a; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="eyebrow">GROW在宅医療アカデミー主催</p>
+  <div class="hero-title-block">
+    <div class="hero-title-jp">訪問鍼灸<span class="hero-title-num">2.0</span></div>
+    <div class="hero-tagline">集客実践セミナー</div>
+  </div>
+  <p class="body">現場主義の先生方が、正しく伸びる業界へ。<br>知っている人だけが、静かに伸びていく。<br>その"仕組み"を、3ヶ月で。</p>
+  <div style="margin-bottom:16px"><span class="badge">LIMITED SESSION</span></div>
+  <button class="btn-primary">お申込みはこちら</button>
+</section>
+
+<!-- Impact -->
+<div class="impact-wrap">
+  <div class="impact">
+    <p class="label">NEW STANDARD</p>
+    <h2>現場主義でも<span class="accent">勝てる</span></h2>
+    <div class="impact-row">
+      <div class="big-num">3</div>
+      <div class="impact-text">
+        <p class="sys">SYSTEM BUILD</p>
+        <h3>3ヶ月で<span>集客を自動化</span></h3>
+        <p>なぜ、紹介が途切れないのか。<br>その答えは、当日お伝えします。</p>
+      </div>
+    </div>
+    <div class="quote-block">
+      <p>良い施術だけでは広がらない。<br><strong>選ばれる事業所</strong>には、理由がある。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Message -->
+<div class="message-wrap">
+  <div class="message">
+    <h2>GROWの<em>想い</em></h2>
+    <p>私たちGROWは、現場で本気で利用者様と向き合う先生方が、正しく評価され、正しく伸びる業界をつくりたいと考えています。</p>
+    <p>営業が強いところだけが伸びるこの業界を変えたい。その想いで、これまで数多くの失敗も成功も重ねてきました。</p>
+    <blockquote>「縁を力に、学びを実力に。<br>現場の価値を、未来へ。」</blockquote>
+  </div>
+</div>
+
+<!-- Recommended -->
+<div class="recommended-wrap">
+  <div class="recommended">
+    <h2>こんな方におすすめ</h2>
+    <p class="sub-label">CHECK LIST</p>
+    <div class="check-item">訪問鍼灸マッサージの集客に悩んでいる方</div>
+    <div class="check-item">これから開業を考えておられる方</div>
+    <div class="check-item">ケアマネ営業しかしていない方</div>
+    <div class="check-item">月の集客が5人以下で伸び悩んでいる方</div>
+    <div class="check-item">地域で本当に必要とされる事業所を作りたい方</div>
+  </div>
+</div>
+
+<!-- Learn -->
+<div class="learn-wrap">
+  <div class="learn">
+    <h2>セミナーで学べること</h2>
+    <p>なぜ、あの事業所だけが選ばれ続けるのか</p>
+    <p>紹介が自然に生まれる、見えない導線</p>
+    <p>表には出ない、伸び続ける事業所の裏側</p>
+  </div>
+</div>
+
+<!-- Statement -->
+<div class="statement-wrap">
+  <div class="statement">
+    <p class="eyebrow">ONLY FOR REAL PRACTITIONERS</p>
+    <h2>営業が強い<span>だけじゃない</span></h2>
+    <p class="body">地域に残るのは、<br>本当に必要とされる事業所だけ。</p>
+  </div>
+</div>
+
+<!-- Event Info -->
+<div class="event-wrap">
+  <div class="event">
+    <h2>開催概要</h2>
+    <p class="sub-label">SEMINAR INFO</p>
+    <div class="event-row">📅 7月・8月・9月 第三日曜</div>
+    <div class="event-row">⏰ 13:00〜16:00</div>
+    <div class="event-row">👥 定員 30名</div>
+    <div class="event-row">📍 大阪市中央区南船場1丁目12-11</div>
+    <div class="fee-card">
+      <p class="title">参加費</p>
+      <p>60,000円（税別）／全3回</p>
+      <p>GROWメンバー：参加費無料（懇親会費別途）</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer CTA -->
+<section class="footer-cta">
+  <div class="footer-inner">
+    <h2>良い施術だけでは広がらない。<br>選ばれる事業所には、仕組みがある。</h2>
+    <p>まだ知られていない価値を、正しく届く仕組みに変える。</p>
+    <p class="org">主催：GROW在宅医療アカデミー</p>
+    <button class="btn-primary">お申込み・お問い合わせ</button>
+  </div>
+</section>
+
+</body>
+</html>
+HTMLEOF
+echo "Done"
