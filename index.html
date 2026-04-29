@@ -1,234 +1,245 @@
-import React from "react";
-// Preview-safe version without external animation dependency
-// Simple fallback components for preview stability
-const Card = ({ children, className = "" }) => (
-  <div className={className}>{children}</div>
-);
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訪問鍼灸2.0 集客実践セミナー | GROW在宅医療アカデミー</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
 
-const CardContent = ({ children, className = "" }) => (
-  <div className={className}>{children}</div>
-);
-const Button = ({ children, className = "" }) => (
-  <button className={className}>{children}</button>
-);
-const Icon = ({ children }) => <span className="inline-block">{children}</span>;
+  :root { --yellow: #F5C400; }
 
-export default function GrowLP() {
-  return (
-    <div className="min-h-screen bg-black text-white font-sans bg-[radial-gradient(circle_at_top,_rgba(255,215,0,0.08),_transparent_40%)]">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden px-6 py-20 bg-gradient-to-b from-black via-zinc-900 to-black">
-        <div className="max-w-md mx-auto text-center space-y-6">
-          <p
-            
-            className="text-sm tracking-[0.3em] uppercase text-zinc-400"
-          >
-            GROW在宅医療アカデミー主催
-          </p>
+  /* Hero */
+  .hero {
+    background: radial-gradient(circle at top, rgba(245,196,0,0.10), transparent 45%),
+                linear-gradient(to bottom, #000, #18181b, #000);
+    padding: 72px 24px 80px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: #71717a; margin-bottom: 20px;
+  }
+  .hero-title-block { margin-bottom: 20px; }
+  .hero-title-jp {
+    font-size: clamp(64px, 17vw, 88px);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.03em;
+    filter: drop-shadow(0 0 40px rgba(245,196,0,0.25));
+  }
+  .hero-title-num {
+    display: block;
+    font-size: clamp(80px, 22vw, 110px);
+    font-style: italic;
+    color: var(--yellow);
+    transform: rotate(-2deg);
+    line-height: 1;
+    filter: drop-shadow(0 0 50px rgba(245,196,0,0.45));
+    margin-top: -8px;
+  }
+  .hero-tagline {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    border-top: 2px solid var(--yellow);
+    border-bottom: 2px solid var(--yellow);
+    padding: 8px 20px;
+  }
+  .hero p.body { font-size: 13px; color: #e4e4e7; line-height: 1.9; margin: 24px 0 20px; }
+  .badge {
+    display: inline-block;
+    border: 1.5px solid var(--yellow);
+    padding: 6px 18px;
+    font-size: 11px; letter-spacing: 0.28em; font-weight: 700;
+    color: var(--yellow);
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+  }
+  .btn-primary {
+    display: block; width: 100%; max-width: 360px; margin: 0 auto;
+    padding: 20px; font-size: 15px; font-weight: 700;
+    background: var(--yellow); color: #000;
+    border: none; border-radius: 16px; cursor: pointer;
+    box-shadow: 0 0 40px rgba(245,196,0,0.45);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-primary:hover { opacity: 0.9; }
 
-          <h1
-            
-            className="text-6xl sm:text-7xl font-black leading-[0.9] tracking-[-0.04em] uppercase drop-shadow-[0_0_30px_rgba(255,215,0,0.2)]"
-          >
-            訪問鍼灸
-            <span className="block text-6xl sm:text-7xl italic text-yellow-400 -rotate-2">2.0</span>
-          </h1>
+  /* Impact */
+  .impact-wrap {
+    background: linear-gradient(to bottom, #09090b, #000);
+    border-top: 1px solid rgba(245,196,0,0.25);
+    border-bottom: 1px solid rgba(245,196,0,0.25);
+    padding: 56px 24px;
+  }
+  .impact { max-width: 480px; margin: 0 auto; }
+  .label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #52525b; margin-bottom: 6px; }
+  .impact h2 { font-size: 36px; font-weight: 900; line-height: 1; }
+  .impact h2 .accent { display: block; font-style: italic; font-size: 46px; color: var(--yellow); transform: rotate(-2deg); }
+  .impact-row { display: flex; align-items: flex-start; gap: 16px; margin-top: 40px; }
+  .big-num { font-size: 100px; font-weight: 900; line-height: 1; color: var(--yellow); }
+  .impact-text .sys { font-size: 10px; letter-spacing: 0.3em; color: #52525b; text-transform: uppercase; margin-bottom: 8px; }
+  .impact-text h3 { font-size: 22px; font-weight: 900; line-height: 1.2; }
+  .impact-text h3 span { display: block; font-size: 26px; color: var(--yellow); }
+  .impact-text p { font-size: 12px; color: #a1a1aa; line-height: 1.7; margin-top: 8px; }
+  .quote-block { border-left: 4px solid var(--yellow); padding: 16px; background: rgba(39,39,42,0.4); border-radius: 0 12px 12px 0; margin-top: 32px; }
+  .quote-block p { font-size: 13px; color: #d4d4d8; line-height: 1.8; }
+  .quote-block strong { font-size: 18px; color: #fff; }
 
-          <p
-            
-            className="text-xl font-black leading-relaxed tracking-[0.1em] uppercase text-yellow-300"
-          >
-            集客実践セミナー
-          </p>
+  /* Message */
+  .message-wrap { padding: 48px 24px; }
+  .message { max-width: 480px; margin: 0 auto; }
+  .message h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+  .message h2 em { color: #a1a1aa; font-style: normal; }
+  .message p { font-size: 13px; color: #d4d4d8; line-height: 1.9; margin-bottom: 16px; }
+  .message blockquote { font-size: 18px; font-weight: 600; font-style: italic; line-height: 1.7; border-left: 4px solid #fff; padding-left: 16px; }
 
-          <p className="text-sm text-zinc-200 leading-relaxed font-medium">
-            現場主義の先生方が、正しく伸びる業界へ。<br />
-            知っている人だけが、静かに伸びていく。<br />
-            その“仕組み”を、3ヶ月で。
-          </p>
+  /* Recommended */
+  .recommended-wrap { background: linear-gradient(to bottom, #09090b, #000); border-top: 1px solid rgba(245,196,0,0.1); padding: 48px 24px; }
+  .recommended { max-width: 480px; margin: 0 auto; }
+  .recommended h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .sub-label { font-size: 12px; color: var(--yellow); font-style: italic; margin-bottom: 20px; }
+  .check-item { border: 1px solid rgba(245,196,0,0.2); background: rgba(39,39,42,0.8); border-radius: 16px; padding: 14px 16px; font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
 
-          <div className="pt-6 space-y-4">
-            <div className="flex justify-center">
-              <div className="inline-block border border-yellow-400 px-4 py-2 text-xs tracking-[0.25em] font-bold text-yellow-300 -rotate-2">
-                LIMITED SESSION
-              </div>
-            </div>
-            <Button className="w-full rounded-2xl py-6 text-base font-bold bg-yellow-400 text-black shadow-2xl border border-yellow-300">
-              お申込みはこちら
-            </Button>
-          </div>
-        </div>
-      </section>
+  /* Learn */
+  .learn-wrap { padding: 48px 24px; }
+  .learn { max-width: 480px; margin: 0 auto; }
+  .learn h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+  .learn p { font-size: 13px; color: #d4d4d8; line-height: 1.8; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #27272a; }
+  .learn p:last-child { border-bottom: none; }
 
-      {/* Impact Typography Section */}
-      <section className="px-4 py-14 border-y border-yellow-400/20 bg-gradient-to-b from-zinc-950 to-black">
-        <div className="max-w-md mx-auto space-y-10">
-          <div className="text-left">
-            <p className="text-xs tracking-[0.4em] uppercase text-zinc-500 mb-2">NEW STANDARD</p>
-            <h2 className="text-4xl font-black leading-none">
-              現場主義でも
-              <span className="block italic text-5xl text-yellow-300 -rotate-2 drop-shadow-lg">
-                勝てる
-              </span>
-            </h2>
-          </div>
+  /* Statement */
+  .statement-wrap { padding: 64px 24px; text-align: center; }
+  .statement { max-width: 480px; margin: 0 auto; }
+  .statement .eyebrow { font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #52525b; margin-bottom: 24px; }
+  .statement h2 { font-size: 44px; font-weight: 900; line-height: 1.2; }
+  .statement h2 span { display: block; font-style: italic; color: var(--yellow); transform: skewX(-6deg); }
+  .statement .body { font-size: 16px; font-weight: 600; line-height: 1.8; margin-top: 24px; }
 
-          <div className="flex justify-between items-start gap-4">
-            <div className="text-[120px] font-black leading-none text-yellow-400 opacity-90">
-              3
-            </div>
-            <div className="flex-1 pt-2">
-              <p className="text-sm tracking-[0.3em] uppercase text-zinc-500 mb-2">
-                SYSTEM BUILD
-              </p>
-              <p className="text-2xl font-black leading-tight">
-                3ヶ月で
-                <span className="block text-3xl text-yellow-300">
-                  集客を自動化
-                </span>
-              </p>
-              <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
-                なぜ、紹介が途切れないのか。<br />
-                その答えは、当日お伝えします。
-              </p>
-            </div>
-          </div>
+  /* Event Info */
+  .event-wrap { background: linear-gradient(to bottom, #09090b, #000); border-top: 1px solid rgba(245,196,0,0.1); padding: 48px 24px; }
+  .event { max-width: 480px; margin: 0 auto; }
+  .event h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .event-row { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; margin-bottom: 14px; color: #d4d4d8; }
+  .fee-card { background: var(--yellow); color: #000; border-radius: 20px; padding: 24px; margin-top: 20px; }
+  .fee-card p { font-size: 13px; line-height: 1.8; }
+  .fee-card p.title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
 
-          <div className="border-l-4 border-yellow-400 pl-4 bg-zinc-900/40 p-4 rounded-r-2xl">
-            <p className="text-sm text-zinc-300 leading-relaxed">
-              良い施術だけでは広がらない。<br />
-              <span className="text-xl font-bold text-white">選ばれる事業所</span>
-              には、理由がある。
-            </p>
-          </div>
-        </div>
-      </section>
+  /* Footer CTA */
+  .footer-cta { padding: 80px 24px; text-align: center; background: linear-gradient(to bottom, #000, #111); border-top: 1px solid rgba(245,196,0,0.2); }
+  .footer-inner { max-width: 480px; margin: 0 auto; }
+  .footer-cta h2 { font-size: 20px; font-weight: 700; line-height: 1.7; margin-bottom: 20px; }
+  .footer-cta p { font-size: 13px; color: #d4d4d8; line-height: 1.8; margin-bottom: 12px; }
+  .footer-cta .org { font-size: 12px; color: #71717a; margin-bottom: 24px; }
+</style>
+</head>
+<body>
 
-      {/* Message */}
-      <section className="px-6 py-12">
-        <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-2xl font-bold">
-            GROWの<span className="italic text-zinc-400">想い</span>
-          </h2>
-          <p className="text-zinc-300 leading-relaxed text-sm">
-            私たちGROWは、現場で本気で利用者様と向き合う先生方が、
-            正しく評価され、正しく伸びる業界をつくりたいと考えています。
-          </p>
-          <p className="text-zinc-300 leading-relaxed text-sm">
-            営業が強いところだけが伸びるこの業界を変えたい。
-            その想いで、これまで数多くの失敗も成功も重ねてきました。
-          </p>
-          <p className="font-semibold leading-relaxed text-xl italic border-l-4 border-white pl-4">
-            「縁を力に、学びを実力に。<br />
-            現場の価値を、未来へ。」
-          </p>
-        </div>
-      </section>
+<!-- Hero -->
+<section class="hero">
+  <p class="eyebrow">GROW在宅医療アカデミー主催</p>
+  <div class="hero-title-block">
+    <div class="hero-title-jp">訪問鍼灸<span class="hero-title-num">2.0</span></div>
+    <div class="hero-tagline">集客実践セミナー</div>
+  </div>
+  <p class="body">現場主義の先生方が、正しく伸びる業界へ。<br>知っている人だけが、静かに伸びていく。<br>その"仕組み"を、3ヶ月で。</p>
+  <div style="margin-bottom:16px"><span class="badge">LIMITED SESSION</span></div>
+  <button class="btn-primary">お申込みはこちら</button>
+</section>
 
-      {/* Recommended */}
-      <section className="px-6 py-12 bg-gradient-to-b from-zinc-950 to-black border-t border-yellow-400/10">
-        <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-2xl font-bold tracking-tight">こんな方におすすめ</h2>
-          <p className="text-yellow-400 text-sm italic">CHECK LIST</p>
-          <div className="space-y-3">
-            {[
-              "訪問鍼灸マッサージの集客に悩んでいる方",
-              "これから開業を考えておられる方",
-              "ケアマネ営業しかしていない方",
-              "月の集客が5人以下で伸び悩んでいる方",
-              "地域で本当に必要とされる事業所を作りたい方",
-            ].map((item, i) => (
-              <Card
-                key={i}
-                className="rounded-2xl border border-yellow-400/10 bg-zinc-900/80 text-white backdrop-blur-sm"
-              >
-                <CardContent className="p-4 text-sm leading-relaxed">
-                  {item}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Learn */}
-      <section className="px-6 py-12">
-        <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-2xl font-bold">セミナーで学べること</h2>
-          <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
-            <p>なぜ、あの事業所だけが選ばれ続けるのか</p>
-            <p>紹介が自然に生まれる、見えない導線</p>
-            <p>表には出ない、伸び続ける事業所の裏側</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Statement Section */}
-      <section className="px-6 py-16">
-        <div className="max-w-md mx-auto text-center space-y-8">
-          <p className="text-[14px] tracking-[0.35em] uppercase text-zinc-500">
-            ONLY FOR REAL PRACTITIONERS
-          </p>
-
-          <h2 className="text-5xl font-black leading-tight tracking-tight">
-            営業が強い
-            <span className="block -skew-x-6 italic text-yellow-300 text-5xl">
-              だけじゃない
-            </span>
-          </h2>
-
-          <p className="text-lg leading-relaxed font-semibold">
-            地域に残るのは、<br />
-            本当に必要とされる事業所だけ。
-          </p>
-        </div>
-      </section>
-
-      {/* Event Info */}
-      <section className="px-6 py-12 bg-gradient-to-b from-zinc-950 to-black border-t border-yellow-400/10">
-        <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-2xl font-bold">開催概要</h2>
-          <p className="text-yellow-400 italic text-sm">SEMINAR INFO</p>
-
-          <div className="space-y-4 text-sm">
-            <div className="flex gap-3"><Icon>📅</Icon>7月・8月・9月 第三日曜</div>
-            <div className="flex gap-3"><Icon>⏰</Icon>13:00〜16:00</div>
-            <div className="flex gap-3"><Icon>👥</Icon>定員 30名</div>
-            <div className="flex gap-3"><Icon>📍</Icon>大阪市中央区南船場1丁目12-11</div>
-          </div>
-
-          <Card className="rounded-3xl bg-gradient-to-br from-yellow-300 to-yellow-500 text-black border-0 shadow-2xl">
-            <CardContent className="p-6 space-y-3">
-              <p className="font-bold">参加費</p>
-              <p>60,000円（税別）／全3回</p>
-              <p className="text-sm">GROWメンバー：参加費無料（懇親会費別途）</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="px-6 py-20 text-center bg-[linear-gradient(to_bottom,black,#111)] border-t border-yellow-400/20">
-        <div className="max-w-md mx-auto space-y-6">
-          <h2 className="text-2xl font-bold leading-snug tracking-tight text-white">
-            良い施術だけでは広がらない。<br />
-            選ばれる事業所には、仕組みがある。
-          </h2>
-
-          <p className="text-sm text-zinc-300 leading-relaxed">
-            まだ知られていない価値を、
-            正しく届く仕組みに変える。
-          </p>
-
-          <p className="text-sm text-zinc-400">
-            主催：GROW在宅医療アカデミー
-          </p>
-
-          <Button className="w-full rounded-2xl py-6 text-base font-bold bg-yellow-400 text-black shadow-2xl border border-yellow-300">
-            お申込み・お問い合わせ
-          </Button>
-        </div>
-      </section>
+<!-- Impact -->
+<div class="impact-wrap">
+  <div class="impact">
+    <p class="label">NEW STANDARD</p>
+    <h2>現場主義でも<span class="accent">勝てる</span></h2>
+    <div class="impact-row">
+      <div class="big-num">3</div>
+      <div class="impact-text">
+        <p class="sys">SYSTEM BUILD</p>
+        <h3>3ヶ月で<span>集客を自動化</span></h3>
+        <p>なぜ、紹介が途切れないのか。<br>その答えは、当日お伝えします。</p>
+      </div>
     </div>
-  );
-}
+    <div class="quote-block">
+      <p>良い施術だけでは広がらない。<br><strong>選ばれる事業所</strong>には、理由がある。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Message -->
+<div class="message-wrap">
+  <div class="message">
+    <h2>GROWの<em>想い</em></h2>
+    <p>私たちGROWは、現場で本気で利用者様と向き合う先生方が、正しく評価され、正しく伸びる業界をつくりたいと考えています。</p>
+    <p>営業が強いところだけが伸びるこの業界を変えたい。その想いで、これまで数多くの失敗も成功も重ねてきました。</p>
+    <blockquote>「縁を力に、学びを実力に。<br>現場の価値を、未来へ。」</blockquote>
+  </div>
+</div>
+
+<!-- Recommended -->
+<div class="recommended-wrap">
+  <div class="recommended">
+    <h2>こんな方におすすめ</h2>
+    <p class="sub-label">CHECK LIST</p>
+    <div class="check-item">訪問鍼灸マッサージの集客に悩んでいる方</div>
+    <div class="check-item">これから開業を考えておられる方</div>
+    <div class="check-item">ケアマネ営業しかしていない方</div>
+    <div class="check-item">月の集客が5人以下で伸び悩んでいる方</div>
+    <div class="check-item">地域で本当に必要とされる事業所を作りたい方</div>
+  </div>
+</div>
+
+<!-- Learn -->
+<div class="learn-wrap">
+  <div class="learn">
+    <h2>セミナーで学べること</h2>
+    <p>なぜ、あの事業所だけが選ばれ続けるのか</p>
+    <p>紹介が自然に生まれる、見えない導線</p>
+    <p>表には出ない、伸び続ける事業所の裏側</p>
+  </div>
+</div>
+
+<!-- Statement -->
+<div class="statement-wrap">
+  <div class="statement">
+    <p class="eyebrow">ONLY FOR REAL PRACTITIONERS</p>
+    <h2>営業が強い<span>だけじゃない</span></h2>
+    <p class="body">地域に残るのは、<br>本当に必要とされる事業所だけ。</p>
+  </div>
+</div>
+
+<!-- Event Info -->
+<div class="event-wrap">
+  <div class="event">
+    <h2>開催概要</h2>
+    <p class="sub-label">SEMINAR INFO</p>
+    <div class="event-row">📅 7月・8月・9月 第三日曜</div>
+    <div class="event-row">⏰ 13:00〜16:00</div>
+    <div class="event-row">👥 定員 30名</div>
+    <div class="event-row">📍 大阪市中央区南船場1丁目12-11</div>
+    <div class="fee-card">
+      <p class="title">参加費</p>
+      <p>60,000円（税別）／全3回</p>
+      <p>GROWメンバー：参加費無料（懇親会費別途）</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer CTA -->
+<section class="footer-cta">
+  <div class="footer-inner">
+    <h2>良い施術だけでは広がらない。<br>選ばれる事業所には、仕組みがある。</h2>
+    <p>まだ知られていない価値を、正しく届く仕組みに変える。</p>
+    <p class="org">主催：GROW在宅医療アカデミー</p>
+    <button class="btn-primary">お申込み・お問い合わせ</button>
+  </div>
+</section>
+
+</body>
+</html>
